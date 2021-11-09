@@ -2,6 +2,13 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
 <mapper namespace="com.care.root.mybatis.member.MemberMapper">
-<!-- 연결된 DAO 파일 위치 지정해주기 -->
+	<resultMap id="member" type="com.care.root.member.dto.MemberDTO" >
+		<id property="id" column="id"/>
+		<result property="pw" column="pw"/>
+	</resultMap>
+	<select id="Check" resultMap="member">
+ 		select * from membership where id=#{id}
+ 	</select>
 </mapper>
