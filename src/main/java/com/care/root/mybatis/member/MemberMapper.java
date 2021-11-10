@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.care.root.member.dto.MemberDTO;
 
 public interface MemberMapper {
-	public MemberDTO Check(String id);
+	public MemberDTO getMember(String id);
+
 }

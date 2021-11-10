@@ -5,7 +5,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
 
+import com.care.root.member.dto.MemberDTO;
+
 
 public interface MemberService {
-	public int loginCheck(HttpServletRequest request);
+	public int userCheck(String id, String pw);
+
 }

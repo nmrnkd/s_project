@@ -7,8 +7,14 @@
 	<resultMap id="member" type="com.care.root.member.dto.MemberDTO" >
 		<id property="id" column="id"/>
 		<result property="pw" column="pw"/>
+		<result property="addr" column="addr"/>
 	</resultMap>
-	<select id="Check" resultMap="member">
- 		select * from membership where id=#{id}
+
+	<select id="getMember" resultMap="member">
+ 		select * from membership where id = #{id}
  	</select>
+	
+	<insert id="insert">
+		insert into MEMBERSHIP values(#{id}, #{pw}, #{addr})
+	</insert>
 </mapper>

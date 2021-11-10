@@ -4,21 +4,27 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.care.root.member.dto.MemberDTO;
 import com.care.root.mybatis.member.MemberMapper;
 
 @Service
+
+
 public class MemberServiceImpl implements MemberService{
 	@Autowired MemberMapper mapper;
 	MemberDTO dto;
-	public int loginCheck(HttpServletRequest request) {
-		dto = mapper.Check(request.getParameter("id"));
+	public int userCheck(String id, String pw) {
+		dto = mapper.getMember(id);
+		System.out.println(dto.getId());
+		System.out.println(dto.getPw());
+		System.out.println(dto.getAddr());
 		if(dto!=null) {
-			if(dto.getPw().equals(request.getAttribute("pw"))) {
-				return 1;
+			if(pw.equals(dto.getPw())) {
+				return 0;
 			}
 		}
-		return 0;
+		return 1;
 	}
 }

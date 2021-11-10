@@ -14,25 +14,33 @@
 <header>
 	<jsp:include page="../default/header.jsp"></jsp:include>
 </header>
-	<h1>로그인 페이지 입니다</h1>
-	
-	<form action="loginChk" method="post">
+<div align="center">
+<br>
+	<h3>로그인 페이지 입니다</h3>
+<br><br>
+</div>
+<div align="center">
+	<form action="user_check" method="post">
 		<table>
 			<tr>
 				<td>
 					<input type="text" name="id" placeholder="아이디">
 				</td>	
-				<td style="width:50px; height:50px;" rowspan="2">
-					<input type="submit" value="로그인" >	
+				<td rowspan="2">
+					<input type="submit" value="로그인" style="width:60px; height:50px;" >	
 				</td>	
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="pw" placeholder="비밀먼호">
+					<input type="password" name="pw" placeholder="비밀먼호">
 				</td>
 			</tr>
-	</table>
-</form>	
+			<tr>
+				<td colspan="2" aling="left"><a href="register_form">회원가입</a></td>
+			</tr>
+		</table>
+	</form>
+</div>	
 <footer>
 	<jsp:include page="../default/footer.jsp"></jsp:include>
 </footer>		

@@ -9,46 +9,30 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.care.root.member.dto.MemberDTO;
 import com.care.root.member.service.MemberService;
+import com.care.root.member.session_name.MemberSessionName;
 
 @Controller
-public class MemberController {
+@RequestMapping("member")
+public class MemberController implements MemberSessionName{
 	@Autowired MemberService ms;
 	
-	@RequestMapping("index")
-	public String index() {
-		System.out.println("여기는 컨트롤러-인덱");
-		return "/index";
-	}
-	
-	@RequestMapping("member/login")
+	@GetMapping("login")
 	public String login() {
-		System.out.println("여기는 컨트롤러-로긘");
-		return "/member/login";
+		return "member/login";
 	}
-	@GetMapping("default/header")
-	public String header() {
-		System.out.println("여기는 컨트롤러-헤더");
-		return "/default/header";
-	}
-	@GetMapping("default/footer")
-	public String footer() {
-		System.out.println("여기는 컨트롤러-푸터");
-		return "/default/footer";
-	}
-	@PostMapping("/member/loginChk")
-	public String loginChk(HttpServletRequest request,
-							HttpSession session) {
-		
-		int result = ms.loginCheck(request);
-		if(result==1) {
-			System.out.println("로그인 성공");
-			return "redirect:/index";
-		}else {	
-			System.out.println("로그인 실패");
-			return "redirect:/index";
+	@PostMapping("user_check")
+	public String userCheck(@RequestParam String id, 
+							@RequestParam String pw,
+							RedirectAttributes rs) {
+		int result = ms.userCheck(id,pw);
+		if(result==0) {
+			rs.addAttribute("id",id);
+			return "member/successLogin";
 		}
+		return "redirect:/member/login";
 	}
-		
 }
