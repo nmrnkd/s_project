@@ -47,7 +47,7 @@ nav ul li a:hover {
 				<a href="${contextPath }/member/login">LOGIN</a>
 			</c:when>
 			<c:otherwise>
-				<a href="${contextPath }/member/index">LOGOUT</a>			
+				<a href="${contextPath }/member/logout">LOGOUT</a>			
 			</c:otherwise>
 		</c:choose>	
 	</li>

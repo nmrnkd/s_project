@@ -9,12 +9,11 @@
 <title>+++successLogin+++</title>
 </head>
 <body>
-<header>
-	<jsp:include page="../default/header.jsp"></jsp:include>
-</header>
-
-<footer>
-	<jsp:include page="../default/footer.jsp"></jsp:include>
-</footer>
+<jsp:include page="../default/header.jsp"></jsp:include>
+<div align="center">
+	<br><br>
+	<h2>${loginUser }님 환영합니다</h2>
+</div>
+<jsp:include page="../default/footer.jsp"></jsp:include>
 </body>
 </html>

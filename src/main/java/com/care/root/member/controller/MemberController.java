@@ -31,8 +31,20 @@ public class MemberController implements MemberSessionName{
 		int result = ms.userCheck(id,pw);
 		if(result==0) {
 			rs.addAttribute("id",id);
-			return "member/successLogin";
+			return "redirect:successLogin";
 		}
-		return "redirect:/member/login";
+		return "redirect:login";
+	}
+	@GetMapping("/successLogin")
+	public String successLogin(@RequestParam String id, HttpSession session) {
+		session.setAttribute(LOGIN, id);
+		return "member/successLogin";
+	}
+	@GetMapping("logout")
+	public String logout(HttpSession session) {
+		if(session.getAttribute(LOGIN)!=null) {
+			session.invalidate();
+		}
+		return "redirect:/index";
 	}
 }
