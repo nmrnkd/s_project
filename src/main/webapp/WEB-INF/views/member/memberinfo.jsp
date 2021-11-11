@@ -6,11 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>+++MEMBERINFO+++</title>
 <style type="text/css">
-table{
-	border: 2px solid green;
-}
 tr th{
 	text-align: center;
 	font-size: 12pt;
