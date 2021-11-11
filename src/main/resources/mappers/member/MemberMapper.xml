@@ -13,8 +13,8 @@
 	<select id="getMember" resultMap="member">
  		select * from membership where id = #{id}
  	</select>
-	
-	<insert id="insert">
-		insert into MEMBERSHIP values(#{id}, #{pw}, #{addr})
-	</insert>
+ 	
+ 	<select id="memberInfo" resultMap="member">
+ 		select * from membership
+ 	</select>
 </mapper>

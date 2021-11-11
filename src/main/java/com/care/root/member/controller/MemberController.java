@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,5 +47,13 @@ public class MemberController implements MemberSessionName{
 			session.invalidate();
 		}
 		return "redirect:/index";
+	}
+	@GetMapping("memberinfo")
+	public String memberInfo(Model model, HttpSession session) {
+		if(session.getAttribute(LOGIN)!=null) {
+			ms.memberInfo(model);
+			return "member/memberinfo";			
+		}
+		return "redirect:/login";
 	}
 }

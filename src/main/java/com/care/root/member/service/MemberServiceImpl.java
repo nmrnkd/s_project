@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.care.root.member.dto.MemberDTO;
@@ -26,5 +27,8 @@ public class MemberServiceImpl implements MemberService{
 			}
 		}
 		return 1;
+	}
+	public void memberInfo(Model model) {
+		model.addAttribute("memberList",mapper.memberInfo());
 	}
 }

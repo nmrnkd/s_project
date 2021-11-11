@@ -51,6 +51,16 @@ nav ul li a:hover {
 			</c:otherwise>
 		</c:choose>	
 	</li>
+	<li>
+		<c:choose>
+			<c:when test="${loginUser==null }">
+				<a href="${contextPath }/member/login">MEMBERSHIP</a>
+			</c:when>
+			<c:otherwise>
+				<a href="${contextPath }/member/memberinfo">MEMBERSHIP</a>			
+			</c:otherwise>
+		</c:choose>	
+	</li>
 </ul>
     
 </nav>
