@@ -13,7 +13,7 @@
 
 <div align="center">
 <form action="register" method="post">
-	<table border="1">
+	<table>
 		<caption>회원 등록</caption>
 		<tr>
 			<td><input type="text" name="id" placeholder="아이디"></td>
@@ -22,10 +22,10 @@
 			<td><input type="password" name="pw" placeholder="비밀번호"></td>
 		</tr>	
 		<tr>
-			<td><input type="text" name="주소" placeholder="주소"></td>
+			<td><input type="text" name="addr" placeholder="주소"></td>
 		</tr>	
 		<tr>
-			<td style="width:60px; height:20px;"><button type="submit" value="회원가입"/></td>
+			<td align="center"><input type="submit" value="회원가입" style="width:70px; height:30px;"></td>
 		</tr>	
 	</table>
 </form>

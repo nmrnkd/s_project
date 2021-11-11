@@ -34,4 +34,13 @@ public class MemberServiceImpl implements MemberService{
 	public void getMember(String id,Model model) {
 		model.addAttribute("info",mapper.getMember(id));
 	}
+	public int register(MemberDTO dto) {
+		int result = 0;
+		try {
+			result = mapper.register(dto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 }

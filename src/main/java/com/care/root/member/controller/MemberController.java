@@ -61,4 +61,19 @@ public class MemberController implements MemberSessionName{
 		ms.getMember(id,model);
 		return "member/info";
 	}
+	@GetMapping("register_form")
+	public String registerForm() {
+		return "member/register";
+	}
+	@PostMapping("register")
+	public String register(MemberDTO dto) {
+		int result = ms.register(dto);
+		System.out.println(dto.getId());
+		System.out.println(dto.getPw());
+		System.out.println(dto.getAddr());
+		if(result==0) {
+			return "redirect:register_form";
+		}
+		return "redirect:login";
+	}
 }
