@@ -56,4 +56,9 @@ public class MemberController implements MemberSessionName{
 		}
 		return "redirect:/login";
 	}
+	@GetMapping("info")
+	public String info(@RequestParam String id, Model model) {
+		ms.getMember(id,model);
+		return "member/info";
+	}
 }

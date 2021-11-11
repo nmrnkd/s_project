@@ -31,4 +31,7 @@ public class MemberServiceImpl implements MemberService{
 	public void memberInfo(Model model) {
 		model.addAttribute("memberList",mapper.memberInfo());
 	}
+	public void getMember(String id,Model model) {
+		model.addAttribute("info",mapper.getMember(id));
+	}
 }
