@@ -9,7 +9,6 @@
 		<result property="pw" column="pw"/>
 		<result property="addr" column="addr"/>
 	</resultMap>
-
 	<select id="getMember" resultMap="member">
  		select * from membership where id = #{id}
  	</select>

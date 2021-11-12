@@ -11,9 +11,7 @@
 <title>+++LOGIN+++</title>
 </head>
 <body>
-<header>
 	<jsp:include page="../default/header.jsp"></jsp:include>
-</header>
 <div align="center">
 <br>
 	<h3>로그인 페이지 입니다</h3>
@@ -41,8 +39,6 @@
 		</table>
 	</form>
 </div>	
-<footer>
 	<jsp:include page="../default/footer.jsp"></jsp:include>
-</footer>		
 </body>
 </html>
